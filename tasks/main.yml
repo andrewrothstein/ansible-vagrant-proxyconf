@@ -1,0 +1,15 @@
+---
+- name: mkdir ~/.vagrant.d
+  file:
+    path: '{{vagrant_proxyconf_dir}}'
+    state: directory
+    mode: '0755'
+
+- name: install config files
+  with_items:
+    - Vagrantfile
+  template:
+    src: '{{item}}.j2'
+    dest: '{{vagrant_proxyconf_dir}}/{{item}}'
+    mode: '0644'
+   
