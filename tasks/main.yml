@@ -13,3 +13,5 @@
     dest: '{{vagrant_proxyconf_dir}}/{{item}}'
     mode: '0644'
    
+- name: install plugin
+  command: vagrant plugin install vagrant-proxyconf
